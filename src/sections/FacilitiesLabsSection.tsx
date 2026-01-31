@@ -1,42 +1,42 @@
-import { useRef, useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Wrench, Shield, Calendar, Monitor, Cpu, FlaskConical } from 'lucide-react';
-import MagneticButton from '../components/MagneticButton';
+import { useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Wrench, Shield, Calendar, Monitor, Cpu, FlaskConical } from "lucide-react";
+import MagneticButton from "../components/MagneticButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const facilities = [
-  { 
-    icon: Monitor, 
-    name: 'Computing Lab',
-    desc: 'High-performance workstations',
-    equipment: 'GPUs, Clusters, Cloud'
+  {
+    icon: Monitor,
+    name: "آزمایشگاه محاسبات",
+    desc: "ایستگاه‌های کاری پرقدرت",
+    equipment: "GPU، کلاستر، ابر",
   },
-  { 
-    icon: Cpu, 
-    name: 'Electronics Lab',
-    desc: 'Prototype development',
-    equipment: 'Oscilloscopes, Soldering, 3D Printers'
+  {
+    icon: Cpu,
+    name: "آزمایشگاه الکترونیک",
+    desc: "توسعه نمونه اولیه",
+    equipment: "اسیلوسکوپ، لحیم‌کاری، پرینتر سه‌بعدی",
   },
-  { 
-    icon: FlaskConical, 
-    name: 'Wet Lab',
-    desc: 'Biological research',
-    equipment: 'Microscopes, Centrifuges, PCR'
+  {
+    icon: FlaskConical,
+    name: "آزمایشگاه تر",
+    desc: "پژوهش زیستی",
+    equipment: "میکروسکوپ، سانتریفیوژ، PCR",
   },
-  { 
-    icon: Wrench, 
-    name: 'Maker Space',
-    desc: 'Physical prototyping',
-    equipment: 'CNC, Laser Cutter, Woodshop'
+  {
+    icon: Wrench,
+    name: "فضای ساخت",
+    desc: "نمونه‌سازی فیزیکی",
+    equipment: "CNC، برش لیزری، کارگاه چوب",
   },
 ];
 
 const quickStats = [
-  { value: '50+', label: 'Workstations' },
-  { value: '24/7', label: 'Access' },
-  { value: '100%', label: 'Safety Record' },
+  { value: "+۵۰", label: "ایستگاه کاری" },
+  { value: "۲۴/۷", label: "دسترسی" },
+  { value: "۱۰۰٪", label: "سابقه ایمنی" },
 ];
 
 export default function FacilitiesLabsSection() {
@@ -52,24 +52,26 @@ export default function FacilitiesLabsSection() {
 
     const ctx = gsap.context(() => {
       // Image parallax
-      gsap.fromTo(image, 
+      gsap.fromTo(
+        image,
         { y: 60, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 1,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: 'top 70%',
-            toggleActions: 'play none none reverse',
-          }
-        }
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        },
       );
 
       // Grid items
-      const gridItems = grid.querySelectorAll('.facility-card');
-      gsap.fromTo(gridItems, 
+      const gridItems = grid.querySelectorAll(".facility-card");
+      gsap.fromTo(
+        gridItems,
         { scale: 0.9, opacity: 0 },
         {
           scale: 1,
@@ -77,15 +79,15 @@ export default function FacilitiesLabsSection() {
           duration: 0.5,
           stagger: {
             each: 0.1,
-            from: 'random',
+            from: "random",
           },
-          ease: 'back.out(1.5)',
+          ease: "back.out(1.5)",
           scrollTrigger: {
             trigger: grid,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          }
-        }
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        },
       );
     }, section);
 
@@ -93,11 +95,7 @@ export default function FacilitiesLabsSection() {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
-      id="facilities"
-      className="relative py-24 lg:py-32 overflow-hidden"
-    >
+    <section ref={sectionRef} id="facilities" className="relative py-24 lg:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Stats Banner */}
         <div className="glass-card p-6 mb-16 flex flex-wrap justify-center gap-8 md:gap-16">
@@ -113,18 +111,18 @@ export default function FacilitiesLabsSection() {
           {/* Left - Large Image */}
           <div ref={imageRef} className="opacity-0">
             <div className="glass-card overflow-hidden aspect-[4/3] relative group">
-              <img 
-                src="/facilities_lab_wide.jpg" 
-                alt="Prototyping lab"
+              <img
+                src="/facilities_lab_wide.jpg"
+                alt="آزمایشگاه نمونه‌سازی"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-base/60 to-transparent" />
-              
+
               {/* Floating badge */}
-              <div className="absolute bottom-6 left-6 glass-card px-4 py-3">
+              <div className="absolute bottom-6 right-6 glass-card px-4 py-3">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-green-400" />
-                  <span className="text-sm text-text-primary">Safety Certified</span>
+                  <span className="text-sm text-text-primary">گواهی ایمنی</span>
                 </div>
               </div>
             </div>
@@ -134,30 +132,28 @@ export default function FacilitiesLabsSection() {
           <div>
             <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
               <Wrench className="w-4 h-4 text-indigo" />
-              <span className="label-mono text-indigo">Infrastructure</span>
+              <span className="label-mono text-indigo">زیرساخت</span>
             </div>
 
             <h2 className="text-display-2 text-text-primary mb-4">
-              Tools Ready.
-              <span className="block text-gradient">Safety First.</span>
+              ابزار آماده.
+              <span className="block text-gradient">ایمنی اول.</span>
             </h2>
-            
+
             <p className="text-lg text-text-secondary leading-relaxed mb-8">
-              Prototyping labs, clean workstations, and shared testbeds—open to all affiliated projects. 
-              Everything you need to build and test your ideas.
+              آزمایشگاه‌های نمونه‌سازی، ایستگاه‌های کاری تمیز و بستر آزمایش مشترک— باز برای همه پروژه‌های وابسته. همه
+              چیزی که برای ساخت و آزمایش ایده‌هایتان نیاز دارید.
             </p>
 
             {/* Facilities Grid */}
             <div ref={gridRef} className="grid grid-cols-2 gap-4 mb-8">
               {facilities.map((facility, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="facility-card glass-card p-4 hover:bg-white/10 transition-colors group cursor-pointer opacity-0"
                 >
                   <facility.icon className="w-6 h-6 text-indigo mb-3 group-hover:scale-110 transition-transform" />
-                  <h4 className="font-display font-medium text-text-primary mb-1">
-                    {facility.name}
-                  </h4>
+                  <h4 className="font-display font-medium text-text-primary mb-1">{facility.name}</h4>
                   <p className="text-xs text-text-secondary mb-2">{facility.desc}</p>
                   <p className="text-xs text-indigo/70">{facility.equipment}</p>
                 </div>
@@ -166,7 +162,7 @@ export default function FacilitiesLabsSection() {
 
             <MagneticButton className="primary-button px-6 py-4 text-white font-medium flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              Reserve Equipment
+              رزرو تجهیزات
             </MagneticButton>
           </div>
         </div>

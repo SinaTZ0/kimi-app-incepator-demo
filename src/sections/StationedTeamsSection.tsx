@@ -8,83 +8,83 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stationedTeams = [
   {
-    name: "NeuralFlow AI",
+    name: "نورال‌فلو AI",
     logo: "/team_neuralflow.jpg",
-    industry: "Artificial Intelligence",
-    description: "Building next-gen neural network optimization tools for enterprise ML pipelines.",
+    industry: "هوش مصنوعی",
+    description: "ساخت ابزارهای نسل جدید بهینه‌سازی شبکه عصبی برای خطوط یادگیری ماشین سازمانی.",
     members: 8,
-    founded: "2024",
-    stage: "Series A",
+    founded: "۱۴۰۳",
+    stage: "سری A",
     color: "from-violet-500/20 to-indigo-500/20",
   },
   {
-    name: "GreenGrid Energy",
+    name: "گرین‌گرید انرژی",
     logo: "/team_greengrid.jpg",
-    industry: "Clean Tech",
-    description: "Smart grid solutions for renewable energy management and distribution.",
+    industry: "فناوری پاک",
+    description: "راه‌حل‌های شبکه هوشمند برای مدیریت و توزیع انرژی تجدیدپذیر.",
     members: 6,
-    founded: "2023",
-    stage: "Seed",
+    founded: "۱۴۰۲",
+    stage: "بذری",
     color: "from-emerald-500/20 to-teal-500/20",
   },
   {
-    name: "MedSync Health",
+    name: "مدسینک سلامت",
     logo: "/team_medsync.jpg",
-    industry: "Health Tech",
-    description: "AI-powered patient monitoring and predictive healthcare analytics platform.",
+    industry: "سلامت دیجیتال",
+    description: "پلتفرم پایش بیمار و تحلیل پیش‌بینانه سلامت مبتنی بر هوش مصنوعی.",
     members: 10,
-    founded: "2024",
-    stage: "Pre-Seed",
+    founded: "۱۴۰۳",
+    stage: "پیش‌بذری",
     color: "from-rose-500/20 to-pink-500/20",
   },
   {
-    name: "QuantumLeap Labs",
+    name: "کوانتوم‌لیپ لبز",
     logo: "/team_quantumleap.jpg",
-    industry: "Quantum Computing",
-    description: "Developing quantum algorithms for financial modeling and optimization.",
+    industry: "محاسبات کوانتومی",
+    description: "توسعه الگوریتم‌های کوانتومی برای مدل‌سازی و بهینه‌سازی مالی.",
     members: 5,
-    founded: "2025",
-    stage: "Pre-Seed",
+    founded: "۱۴۰۴",
+    stage: "پیش‌بذری",
     color: "from-cyan-500/20 to-blue-500/20",
   },
   {
-    name: "EduVerse XR",
+    name: "ادوورس XR",
     logo: "/team_eduverse.jpg",
-    industry: "EdTech",
-    description: "Immersive VR/AR educational experiences for K-12 STEM learning.",
+    industry: "فناوری آموزش",
+    description: "تجربیات آموزشی غوطه‌ور VR/AR برای یادگیری STEM مدارس.",
     members: 7,
-    founded: "2024",
-    stage: "Seed",
+    founded: "۱۴۰۳",
+    stage: "بذری",
     color: "from-amber-500/20 to-orange-500/20",
   },
   {
-    name: "AgriBot Systems",
+    name: "آگری‌بات سیستمز",
     logo: "/team_agribot.jpg",
-    industry: "AgTech",
-    description: "Autonomous farming robots and precision agriculture solutions.",
+    industry: "فناوری کشاورزی",
+    description: "ربات‌های کشاورزی خودران و راه‌حل‌های کشاورزی دقیق.",
     members: 9,
-    founded: "2023",
-    stage: "Series A",
+    founded: "۱۴۰۲",
+    stage: "سری A",
     color: "from-lime-500/20 to-green-500/20",
   },
 ];
 
 const stats = [
-  { value: "24", label: "Active Teams", icon: Building2 },
-  { value: "180+", label: "Team Members", icon: Users },
-  { value: "$15M", label: "Total Raised", icon: Target },
-  { value: "6", label: "Exits", icon: Rocket },
+  { value: "۲۴", label: "تیم فعال", icon: Building2 },
+  { value: "+۱۸۰", label: "اعضای تیم", icon: Users },
+  { value: "۱۵M$", label: "کل سرمایه جذب شده", icon: Target },
+  { value: "۶", label: "خروج موفق", icon: Rocket },
 ];
 
 export default function StationedTeamsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("همه");
 
-  const industries = ["All", ...new Set(stationedTeams.map((t) => t.industry))];
+  const industries = ["همه", ...new Set(stationedTeams.map((t) => t.industry))];
 
   const filteredTeams =
-    activeFilter === "All" ? stationedTeams : stationedTeams.filter((t) => t.industry === activeFilter);
+    activeFilter === "همه" ? stationedTeams : stationedTeams.filter((t) => t.industry === activeFilter);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -145,14 +145,14 @@ export default function StationedTeamsSection() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
             <Building2 className="w-4 h-4 text-indigo" />
-            <span className="label-mono text-indigo">Stationed Teams</span>
+            <span className="label-mono text-indigo">تیم‌های مستقر</span>
           </div>
           <h2 className="text-display-2 text-text-primary mb-4">
-            Startups <span className="text-gradient">In Residence</span>
+            استارتاپ‌های <span className="text-gradient">مقیم</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Meet the innovative teams building the future from our incubator space. These startups have full access to
-            our labs, mentors, and resources.
+            با تیم‌های نوآوری که آینده را از فضای شتاب‌دهنده ما می‌سازند آشنا شوید. این استارتاپ‌ها دسترسی کامل به
+            آزمایشگاه‌ها، منتورها و منابع ما دارند.
           </p>
         </div>
 
@@ -217,11 +217,11 @@ export default function StationedTeamsSection() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex items-center gap-2 text-sm text-text-secondary">
                     <Users className="w-4 h-4" />
-                    <span>{team.members} members</span>
+                    <span>{team.members} عضو</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-text-secondary">
                     <Calendar className="w-4 h-4" />
-                    <span>Est. {team.founded}</span>
+                    <span>تأسیس {team.founded}</span>
                   </div>
                 </div>
 
@@ -232,8 +232,8 @@ export default function StationedTeamsSection() {
                     <span className="text-sm font-medium text-text-primary">{team.stage}</span>
                   </div>
                   <button className="text-indigo text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all">
-                    Learn more
-                    <ArrowRight className="w-4 h-4" />
+                    بیشتر بدانید
+                    <ArrowRight className="w-4 h-4 rotate-180" />
                   </button>
                 </div>
               </div>
@@ -244,19 +244,19 @@ export default function StationedTeamsSection() {
         {/* CTA Section */}
         <div className="glass-card p-8 md:p-12 text-center">
           <h3 className="text-2xl md:text-3xl font-display font-semibold text-text-primary mb-4">
-            Ready to Join Our Incubator?
+            آماده پیوستن به شتاب‌دهنده هستید؟
           </h3>
           <p className="text-text-secondary max-w-xl mx-auto mb-8">
-            Apply for a stationed residency and get access to dedicated workspace, mentorship, funding opportunities,
-            and our global network.
+            برای اقامت مستقر درخواست دهید و به فضای کاری اختصاصی، منتورشیپ، فرصت‌های سرمایه‌گذاری و شبکه جهانی ما دسترسی
+            پیدا کنید.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <MagneticButton className="primary-button px-8 py-4 text-white font-medium inline-flex items-center gap-2">
-              Apply for Residency
-              <ArrowRight className="w-5 h-5" />
+              درخواست اقامت
+              <ArrowRight className="w-5 h-5 rotate-180" />
             </MagneticButton>
             <MagneticButton className="glass-button px-8 py-4 text-text-primary font-medium inline-flex items-center gap-2 hover:bg-white/10 transition-colors">
-              Schedule a Tour
+              رزرو تور بازدید
               <ExternalLink className="w-5 h-5" />
             </MagneticButton>
           </div>

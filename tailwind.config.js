@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -52,18 +52,18 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        mono: ['IBM Plex Mono', 'monospace'],
+        sans: ["Vazirmatn", "system-ui", "sans-serif"],
+        display: ["Vazirmatn", "system-ui", "sans-serif"],
+        mono: ["Vazirmatn", "monospace"],
       },
       fontSize: {
-        'display-1': ['clamp(44px, 5vw, 84px)', { lineHeight: '0.95', fontWeight: '600' }],
-        'display-2': ['clamp(34px, 3.6vw, 56px)', { lineHeight: '1.05', fontWeight: '600' }],
-        'display-3': ['clamp(28px, 2.8vw, 42px)', { lineHeight: '1.1', fontWeight: '600' }],
+        "display-1": ["clamp(44px, 5vw, 84px)", { lineHeight: "0.95", fontWeight: "600" }],
+        "display-2": ["clamp(34px, 3.6vw, 56px)", { lineHeight: "1.05", fontWeight: "600" }],
+        "display-3": ["clamp(28px, 2.8vw, 42px)", { lineHeight: "1.1", fontWeight: "600" }],
       },
       borderRadius: {
-        'glass': '28px',
-        'glass-mobile': '22px',
+        glass: "28px",
+        "glass-mobile": "22px",
         xl: "calc(var(--radius) + 4px)",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -73,11 +73,11 @@ module.exports = {
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
         glass: "0 28px 100px rgba(0, 0, 0, 0.45)",
-        'glow-indigo': "0 10px 30px rgba(79, 109, 245, 0.35)",
-        'glow-indigo-lg': "0 14px 40px rgba(79, 109, 245, 0.45)",
+        "glow-indigo": "0 10px 30px rgba(79, 109, 245, 0.35)",
+        "glow-indigo-lg": "0 14px 40px rgba(79, 109, 245, 0.45)",
       },
       backdropBlur: {
-        glass: '22px',
+        glass: "22px",
       },
       keyframes: {
         "accordion-down": {
@@ -92,7 +92,7 @@ module.exports = {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
         },
-        "float": {
+        float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
@@ -105,10 +105,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
-        "float": "float 6s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
