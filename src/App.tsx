@@ -1,35 +1,36 @@
-import { useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Navigation from './components/Navigation';
-import CustomCursor from './components/CustomCursor';
-import ParticleBackground from './components/ParticleBackground';
-import LoadingScreen from './components/LoadingScreen';
-import ScrollProgress from './components/ScrollProgress';
+import Navigation from "./components/Navigation";
+import CustomCursor from "./components/CustomCursor";
+import ParticleBackground from "./components/ParticleBackground";
+import LoadingScreen from "./components/LoadingScreen";
+import ScrollProgress from "./components/ScrollProgress";
 
-import HeroSection from './sections/HeroSection';
-import ResearchPillarsSection from './sections/ResearchPillarsSection';
-import InnovationSpotlightSection from './sections/InnovationSpotlightSection';
-import CollaborationModelSection from './sections/CollaborationModelSection';
-import StudentVenturesSection from './sections/StudentVenturesSection';
-import FacultyMentorsSection from './sections/FacultyMentorsSection';
-import FacilitiesLabsSection from './sections/FacilitiesLabsSection';
-import IndustryBridgeSection from './sections/IndustryBridgeSection';
-import GlobalNetworkSection from './sections/GlobalNetworkSection';
-import EventsShowcasesSection from './sections/EventsShowcasesSection';
-import SuccessStoriesSection from './sections/SuccessStoriesSection';
-import ContactApplySection from './sections/ContactApplySection';
+import HeroSection from "./sections/HeroSection";
+import ResearchPillarsSection from "./sections/ResearchPillarsSection";
+import InnovationSpotlightSection from "./sections/InnovationSpotlightSection";
+import CollaborationModelSection from "./sections/CollaborationModelSection";
+import StudentVenturesSection from "./sections/StudentVenturesSection";
+import StationedTeamsSection from "./sections/StationedTeamsSection";
+import FacultyMentorsSection from "./sections/FacultyMentorsSection";
+import FacilitiesLabsSection from "./sections/FacilitiesLabsSection";
+import IndustryBridgeSection from "./sections/IndustryBridgeSection";
+import GlobalNetworkSection from "./sections/GlobalNetworkSection";
+import EventsShowcasesSection from "./sections/EventsShowcasesSection";
+import SuccessStoriesSection from "./sections/SuccessStoriesSection";
+import ContactApplySection from "./sections/ContactApplySection";
 
-import { useReducedMotion } from './hooks/useReducedMotion';
-import { useKeyboardNavigation } from './hooks/useKeyboardNavigation';
+import { useReducedMotion } from "./hooks/useReducedMotion";
+import { useKeyboardNavigation } from "./hooks/useKeyboardNavigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const prefersReducedMotion = useReducedMotion();
-  
+
   // Enable keyboard navigation
   useKeyboardNavigation();
 
@@ -52,10 +53,10 @@ function App() {
       <div className="relative min-h-screen">
         {/* Mesh Gradient Background */}
         <div className="mesh-gradient" />
-        
+
         {/* Particle Background (respects reduced motion) */}
         {!prefersReducedMotion && <ParticleBackground />}
-        
+
         {/* Grain Overlay */}
         <div className="grain-overlay" />
 
@@ -69,6 +70,7 @@ function App() {
           <InnovationSpotlightSection />
           <CollaborationModelSection />
           <StudentVenturesSection />
+          <StationedTeamsSection />
           <FacultyMentorsSection />
           <FacilitiesLabsSection />
           <IndustryBridgeSection />
