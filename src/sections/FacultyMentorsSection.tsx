@@ -104,7 +104,7 @@ export default function FacultyMentorsSection() {
         </div>
 
         {/* Mentor Cards - Horizontal Scroll on Mobile */}
-        <div ref={cardsRef} className="flex flex-col md:flex-row gap-6 mb-12 overflow-x-auto pb-4">
+        <div ref={cardsRef} className="flex flex-col md:flex-row gap-6 mb-12 overflow-x-auto pb-4 overflow-hidden">
           {mentors.map((mentor, i) => (
             <div key={i} className="mentor-card glass-card overflow-hidden flex-shrink-0 md:w-80 opacity-0 group">
               {/* Image */}

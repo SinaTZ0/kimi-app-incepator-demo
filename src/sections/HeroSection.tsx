@@ -37,7 +37,7 @@ export default function HeroSection() {
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div ref={contentRef} className="relative z-10 w-full px-6 lg:px-12">
         {/* Central Hero Content */}
-        <div className="max-w-5xl mx-auto text-center relative">
+        <div className="max-w-5xl mx-auto text-center relative ">
           <img
             src="/hut-drawing-transparent2.png"
             alt="پژوهشگر"
