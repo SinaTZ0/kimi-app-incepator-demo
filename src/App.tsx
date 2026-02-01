@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Navigation from "./components/Navigation";
 import CustomCursor from "./components/CustomCursor";
 import ParticleBackground from "./components/ParticleBackground";
-import LoadingScreen from "./components/LoadingScreen";
 import ScrollProgress from "./components/ScrollProgress";
 
 import HeroSection from "./sections/HeroSection";
@@ -28,20 +26,15 @@ import { useKeyboardNavigation } from "./hooks/useKeyboardNavigation";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
   const prefersReducedMotion = useReducedMotion();
 
   // Enable keyboard navigation
   useKeyboardNavigation();
 
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-  };
-
   return (
     <>
       {/* Loading Screen */}
-      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
+      {/* {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />} */}
 
       {/* Custom Cursor (desktop only, respects reduced motion) */}
       {!prefersReducedMotion && <CustomCursor />}
@@ -50,7 +43,7 @@ function App() {
       <ScrollProgress />
 
       {/* Main App */}
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen overflow-x-hidden">
         {/* Mesh Gradient Background */}
         <div className="mesh-gradient" />
 

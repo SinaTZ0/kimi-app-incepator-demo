@@ -3,12 +3,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import MagneticButton from "../components/MagneticButton";
+import LightRays from "@/bg-ui/light-rays";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
@@ -28,6 +30,23 @@ export default function HeroSection() {
           scrub: true,
         },
       });
+
+      // Paper-like 3D rise animation on mount
+      const image = imageRef.current;
+      if (image) {
+        gsap.fromTo(
+          image,
+          { rotationX: 90, scale: 0.8, transformOrigin: "center bottom", dropShadow: "none" },
+          {
+            scale: 1.5,
+            rotationX: 0,
+            opacity: 0.3,
+            duration: 1.4,
+            ease: "power3.out",
+            delay: 0.2,
+          },
+        );
+      }
     }, section);
 
     return () => ctx.revert();
@@ -35,47 +54,71 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#ffffff"
+          raysSpeed={0.5}
+          lightSpread={0.5}
+          rayLength={3}
+          followMouse={true}
+          mouseInfluence={0.02}
+          noiseAmount={0}
+          distortion={0}
+          className="custom-rays"
+          pulsating={false}
+          fadeDistance={3}
+          saturation={1}
+        />
+      </div>
       <div ref={contentRef} className="relative z-10 w-full px-6 lg:px-12">
         {/* Central Hero Content */}
-        <div className="max-w-5xl mx-auto text-center relative ">
+        <div className="m-auto text-center relative size-full">
           <img
+            ref={imageRef}
             src="/hut-drawing-transparent2.png"
             alt="پژوهشگر"
-            className="w-full h-full scale-150 -translate-y-20 object-cover absolute -z-10 opacity-15"
+            className="absolute inset-0 m-auto -z-10"
+            style={{
+              filter: " hue-rotate(600deg) drop-shadow(-50px 50px 10px black)",
+            }}
+            aria-hidden
           />
 
           {/* Main Headline */}
           <h1 className="text-display-1 text-text-primary mb-6">
             <span className="block text-4xl md:text-6xl leading-tight font-black">دانشکاه صنعتی همدان</span>
-            <span className="block mt-3 text-xl md:text-2xl text-text-secondary">
+            <span className="block mt-3 text-xl md:text-2xl text-[#E5E7EB]">
               مرکز نوآوری — جایی که ایده‌ها <span className="text-gradient font-black">شکل می‌گیرند</span>
             </span>
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
             مرکز نوآوری، سکوی پرتاب پژوهش‌های جسورانه، کسب‌وکارهای دانشجویی و همکاری‌های میان‌رشته‌ای دانشگاه است.
           </p>
 
-          {/* Stats Row */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mt-2 h-10 rounded-full">
-              <Sparkles className="w-4 h-4 text-indigo" />
-              <span className="text-sm text-text-secondary">مرکز نوآوری دانشگاه</span>
+            <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mt-2 h-10 rounded-full border-indigo-300">
+              <Sparkles className="w-4 h-4 text-indigo-300" />
+              <span className="text-sm text-[#FFC107]">مرکز نوآوری دانشگاه</span>
             </div>
-            {[
-              { value: "۱۲", label: "آزمایشگاه" },
-              { value: "+۱۸۰", label: "پروژه" },
-              { value: "+۴۰", label: "همکار" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-1">{stat.value}</div>
-                <div className="label-mono">{stat.label}</div>
-              </div>
-            ))}
-          </div>
 
+            {/* Stats Row */}
+            <div className="flex flex-wrap  gap-8 md:gap-16">
+              {[
+                { value: "۱۲", label: "آزمایشگاه" },
+                { value: "+۱۸۰", label: "پروژه" },
+                { value: "+۴۰", label: "همکار" },
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-1">{stat.value}</div>
+                  <div className="label-mono text-indigo-300 text-base md:text-lg">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <MagneticButton className="primary-button px-8 py-4 text-white font-medium flex items-center gap-2">
