@@ -37,7 +37,13 @@ export default function HeroSection() {
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div ref={contentRef} className="relative z-10 w-full px-6 lg:px-12">
         {/* Central Hero Content */}
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center relative">
+          <img
+            src="/hut-drawing-transparent2.png"
+            alt="پژوهشگر"
+            className="w-full h-full scale-150 -translate-y-20 object-cover absolute -z-10 opacity-15"
+          />
+
           {/* Badge */}
           <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-8">
             <Sparkles className="w-4 h-4 text-indigo" />
@@ -47,7 +53,7 @@ export default function HeroSection() {
           {/* Main Headline */}
           <h1 className="text-display-1 text-text-primary mb-6">
             جایی که ایده‌ها
-            <span className="block text-gradient">شکل می‌گیرند</span>
+            <h1 className=" text-gradient">شکل می‌گیرند</h1>
           </h1>
 
           {/* Description */}
@@ -83,7 +89,7 @@ export default function HeroSection() {
       </div>
 
       {/* Floating Image Cards */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
         {/* Left floating card */}
         <div className="absolute right-[5%] top-[20%] w-48 md:w-64 h-64 md:h-80 glass-card overflow-hidden opacity-60 animate-float hidden lg:block">
           <img src="/hero_portrait.jpg" alt="پژوهشگر" className="w-full h-full object-cover" />
