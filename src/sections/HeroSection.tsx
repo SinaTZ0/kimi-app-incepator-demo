@@ -44,16 +44,12 @@ export default function HeroSection() {
             className="w-full h-full scale-150 -translate-y-20 object-cover absolute -z-10 opacity-15"
           />
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-8">
-            <Sparkles className="w-4 h-4 text-indigo" />
-            <span className="text-sm text-text-secondary">مرکز نوآوری دانشگاه</span>
-          </div>
-
           {/* Main Headline */}
           <h1 className="text-display-1 text-text-primary mb-6">
-            جایی که ایده‌ها
-            <h1 className=" text-gradient">شکل می‌گیرند</h1>
+            <span className="block text-4xl md:text-6xl leading-tight font-black">دانشکاه صنعتی همدان</span>
+            <span className="block mt-3 text-xl md:text-2xl text-text-secondary">
+              مرکز نوآوری — جایی که ایده‌ها <span className="text-gradient font-black">شکل می‌گیرند</span>
+            </span>
           </h1>
 
           {/* Description */}
@@ -63,6 +59,11 @@ export default function HeroSection() {
 
           {/* Stats Row */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mt-2 h-10 rounded-full">
+              <Sparkles className="w-4 h-4 text-indigo" />
+              <span className="text-sm text-text-secondary">مرکز نوآوری دانشگاه</span>
+            </div>
             {[
               { value: "۱۲", label: "آزمایشگاه" },
               { value: "+۱۸۰", label: "پروژه" },

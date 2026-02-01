@@ -107,10 +107,37 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #f4f6ff 0%, #a7aebf 100%);
+    /* Metallic blue-cyan gradient with subtle moving sheen */
+    background: linear-gradient(135deg, #e9f8ff 0%, #cfefff 25%, #80d4ff 55%, #3fb4ff 75%, #0ea5c6 100%);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12),
+      0 8px 24px rgba(3, 18, 32, 0.55);
+    -webkit-font-smoothing: antialiased;
+    animation: metallicShine 5s linear infinite;
+    filter: saturate(1.08) contrast(1.03);
+  }
+
+  @keyframes metallicShine {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .text-gradient {
+      animation: none;
+      background-size: 100% 100%;
+    }
   }
 
   .label-mono {
