@@ -87,7 +87,7 @@ export default function Navigation() {
           isScrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
         }`}
       >
-        <div className="glass-card mx-4 mt-4 px-6 py-4 flex items-center gap-20">
+        <div className="glass-card mx-4 mt-4 px-6 py-4 flex items-center justify-between md:justify-start gap-20">
           <a href="#" className="text-lg font-display font-semibold text-text-primary">
             مرکز نوآوری
           </a>
