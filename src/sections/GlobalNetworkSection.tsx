@@ -77,9 +77,9 @@ export default function GlobalNetworkSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div>
-            <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6 border-indigo-300 rounded-full">
               <Globe className="w-4 h-4 text-indigo" />
-              <span className="label-mono text-indigo">دسترسی جهانی</span>
+              <span className="text-sm text-[#FFC107]">دسترسی جهانی</span>
             </div>
 
             <h2 className="text-display-2 text-text-primary mb-6">

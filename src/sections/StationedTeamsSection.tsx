@@ -143,9 +143,9 @@ export default function StationedTeamsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
+          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6 border-indigo-300 rounded-full">
             <Building2 className="w-4 h-4 text-indigo" />
-            <span className="label-mono text-indigo">تیم‌های مستقر</span>
+            <span className="text-sm text-[#FFC107]">تیم‌های مستقر</span>
           </div>
           <h2 className="text-display-2 text-text-primary mb-4">
             استارتاپ‌های <span className="text-gradient">مقیم</span>

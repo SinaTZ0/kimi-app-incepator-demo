@@ -80,14 +80,14 @@ export default function HeroSection() {
             alt="پژوهشگر"
             className="absolute inset-0 m-auto -z-10"
             style={{
-              filter: " hue-rotate(600deg) drop-shadow(-50px 50px 10px black)",
+              filter: " hue-rotate(600deg) drop-shadow(-20px 20px 10px black)",
             }}
             aria-hidden
           />
 
           {/* Main Headline */}
           <h1 className="text-display-1 text-text-primary mb-6">
-            <span className="block text-4xl md:text-6xl leading-tight font-black">دانشکاه صنعتی همدان</span>
+            <span className="block text-4xl md:text-6xl leading-tight font-black">دانشگاه صنعتی همدان</span>
             <span className="block mt-3 text-xl md:text-2xl text-[#E5E7EB]">
               مرکز نوآوری — جایی که ایده‌ها <span className="text-gradient font-black">شکل می‌گیرند</span>
             </span>

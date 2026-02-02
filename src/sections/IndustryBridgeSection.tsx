@@ -90,7 +90,7 @@ export default function IndustryBridgeSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img src="/industry_presentation.jpg" alt="ارائه صنعتی" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-base via-dark-base/95 to-dark-base" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-base/50 via-dark-base/0 to-dark-base/90" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
@@ -110,14 +110,14 @@ export default function IndustryBridgeSection() {
         </div>
 
         <div ref={contentRef} className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
+          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6 text-indigo-300 border-indigo-300 rounded-full">
             <Briefcase className="w-4 h-4 text-indigo" />
-            <span className="label-mono text-indigo">همکاری صنعتی</span>
+            <span className="text-sm text-[#FFC107]">همکاری صنعتی</span>
           </div>
 
           <h2 className="text-display-2 text-text-primary mb-6">
             ترجمه پژوهش
-            <span className="block text-gradient">به تأثیر</span>
+            <h1 className="block text-gradient mt-2">به تأثیر</h1>
           </h2>
 
           <p className="text-lg text-text-secondary leading-relaxed mb-10">

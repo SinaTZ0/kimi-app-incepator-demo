@@ -130,9 +130,9 @@ export default function FacilitiesLabsSection() {
 
           {/* Right - Content + Grid */}
           <div>
-            <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6 border-indigo-300 rounded-full">
               <Wrench className="w-4 h-4 text-indigo" />
-              <span className="label-mono text-indigo">زیرساخت</span>
+              <span className="label-mono text-[#FFC107]">زیرساخت</span>
             </div>
 
             <h2 className="text-display-2 text-text-primary mb-4">

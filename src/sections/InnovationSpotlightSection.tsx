@@ -94,11 +94,11 @@ export default function InnovationSpotlightSection() {
           <div ref={contentRef} className="lg:col-span-5 opacity-0">
             {/* Tags */}
             <div className="flex gap-3 mb-6">
-              <span className="glass-button px-3 py-1.5 text-xs text-text-secondary flex items-center gap-1.5">
+              <span className="glass-button px-3 py-1.5 text-sm text-[#FFC107] flex items-center border-indigo-300 rounded-full gap-1.5">
                 <Zap className="w-3 h-3 text-indigo" />
                 نمونه‌سازی
               </span>
-              <span className="glass-button px-3 py-1.5 text-xs text-text-secondary flex items-center gap-1.5">
+              <span className="glass-button px-3 py-1.5 text-sm text-[#FFC107] flex items-center border-indigo-300 rounded-full gap-1.5">
                 <Globe className="w-3 h-3 text-indigo" />
                 علم باز
               </span>

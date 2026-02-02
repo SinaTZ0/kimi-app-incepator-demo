@@ -71,9 +71,9 @@ export default function ResearchPillarsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
+          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6 border-indigo-300 rounded-full">
             <Beaker className="w-4 h-4 text-indigo" />
-            <span className="label-mono text-indigo">حوزه‌های تمرکز ما</span>
+            <span className="text-sm text-[#FFC107]">حوزه‌های تمرکز ما</span>
           </div>
           <h2 className="text-display-2 text-text-primary mb-4">ستون‌های پژوهشی</h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">

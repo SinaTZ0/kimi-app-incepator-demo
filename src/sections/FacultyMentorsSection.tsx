@@ -78,9 +78,9 @@ export default function FacultyMentorsSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6">
+          <div className="inline-flex items-center gap-2 glass-button px-4 py-2 mb-6 border-indigo-300 rounded-full">
             <Award className="w-4 h-4 text-indigo" />
-            <span className="label-mono text-indigo">تیم ما</span>
+            <span className="text-sm text-[#FFC107]">تیم ما</span>
           </div>
           <h2 className="text-display-2 text-text-primary mb-4">راهنما، نه نگهبان</h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -102,9 +102,11 @@ export default function FacultyMentorsSection() {
             </div>
           ))}
         </div>
-
         {/* Mentor Cards - Horizontal Scroll on Mobile */}
-        <div ref={cardsRef} className="flex flex-col md:flex-row gap-6 mb-12 overflow-x-auto pb-4 overflow-hidden">
+        <div
+          ref={cardsRef}
+          className="flex flex-col md:flex-row gap-6 mb-12 overflow-x-auto pb-4 overflow-hidden justify-center"
+        >
           {mentors.map((mentor, i) => (
             <div key={i} className="mentor-card glass-card overflow-hidden flex-shrink-0 md:w-80 opacity-0 group">
               {/* Image */}
