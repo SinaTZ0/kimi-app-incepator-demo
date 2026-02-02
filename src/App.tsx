@@ -24,6 +24,7 @@ import ContactApplySection from "./sections/ContactApplySection";
 
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import { useKeyboardNavigation } from "./hooks/useKeyboardNavigation";
+import { useAppScale } from "./hooks/useAppScale";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +34,9 @@ function App() {
 
   // Enable keyboard navigation
   useKeyboardNavigation();
+
+  // Scale UI to 1080p baseline (clamps down only)
+  useAppScale();
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
