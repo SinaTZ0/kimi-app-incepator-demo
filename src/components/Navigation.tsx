@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -14,6 +14,10 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const navContainerRef = useRef<HTMLDivElement | null>(null);
+  const [activeHref, setActiveHref] = useState<string>(navLinks[0].href);
+  const [indicator, setIndicator] = useState({ left: 0, width: 0, visible: false });
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -23,9 +27,51 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const updateIndicator = useCallback(() => {
+    const container = navContainerRef.current;
+    if (!container) return;
+    const activeLink = container.querySelector(`a[href="${activeHref}"]`) as HTMLElement | null;
+    if (activeLink) {
+      const left = activeLink.offsetLeft;
+      const width = activeLink.offsetWidth;
+      setIndicator({ left, width, visible: true });
+    } else {
+      setIndicator((s) => ({ ...s, visible: false }));
+    }
+  }, [activeHref]);
+
+  useEffect(() => {
+    updateIndicator();
+    window.addEventListener("resize", updateIndicator);
+    return () => window.removeEventListener("resize", updateIndicator);
+  }, [updateIndicator]);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    const options = { root: null, rootMargin: "0px 0px -50% 0px", threshold: [0, 0.5, 1] };
+
+    navLinks.forEach((link) => {
+      const el = document.querySelector(link.href);
+      if (el) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveHref(link.href);
+            }
+          });
+        }, options);
+        obs.observe(el);
+        observers.push(obs);
+      }
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
+    setActiveHref(href);
 
     const target = document.querySelector(href);
     if (target) {
@@ -47,17 +93,27 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div ref={navContainerRef} className="hidden md:flex items-center gap-8 relative">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                className={`text-sm transition-colors ${activeHref === link.href ? "text-text-primary" : "text-text-secondary hover:text-text-primary"}`}
               >
                 {link.label}
               </a>
             ))}
+
+            {/* Active indicator */}
+            <span
+              className="absolute -bottom-1 h-0.5 bg-white rounded transition-all duration-300"
+              style={{
+                left: indicator.visible ? `${indicator.left}px` : "0px",
+                width: indicator.visible ? `${indicator.width}px` : "0px",
+                opacity: indicator.visible ? 1 : 0,
+              }}
+            />
           </div>
 
           {/* Mobile Menu Button */}
