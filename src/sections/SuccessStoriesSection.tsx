@@ -52,7 +52,7 @@ export default function SuccessStoriesSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: heading,
-            start: "top 80%",
+            start: "top 70%",
             toggleActions: "play none none reverse",
           },
         },
@@ -71,7 +71,7 @@ export default function SuccessStoriesSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: statsContainer,
-            start: "top 75%",
+            start: "top 65%",
             toggleActions: "play none none reverse",
           },
         },
@@ -91,7 +91,7 @@ export default function SuccessStoriesSection() {
             ease: "power2.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 80%",
+              start: "top 70%",
               toggleActions: "play none none reverse",
             },
             onUpdate: function () {
@@ -117,7 +117,7 @@ export default function SuccessStoriesSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: testimonialsContainer,
-            start: "top 75%",
+            start: "top 70%",
             toggleActions: "play none none reverse",
           },
         },

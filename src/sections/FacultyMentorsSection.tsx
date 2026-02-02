@@ -63,7 +63,7 @@ export default function FacultyMentorsSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: cards,
-            start: "top 80%",
+            start: "top 70%",
             toggleActions: "play none none reverse",
           },
         },

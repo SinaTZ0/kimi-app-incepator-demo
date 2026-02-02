@@ -42,7 +42,7 @@ export default function GlobalNetworkSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 45%",
             toggleActions: "play none none reverse",
           },
         },
@@ -61,7 +61,7 @@ export default function GlobalNetworkSection() {
           ease: "back.out(1.5)",
           scrollTrigger: {
             trigger: locationsContainer,
-            start: "top 80%",
+            start: "top 50%",
             toggleActions: "play none none reverse",
           },
         },

@@ -35,7 +35,7 @@ export default function InnovationSpotlightSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 80%",
+            start: "top 40%",
             toggleActions: "play none none reverse",
           },
         },
@@ -52,7 +52,7 @@ export default function InnovationSpotlightSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 40%",
             toggleActions: "play none none reverse",
           },
         },

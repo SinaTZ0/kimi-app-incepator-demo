@@ -62,7 +62,7 @@ export default function FacilitiesLabsSection() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 40%",
             toggleActions: "play none none reverse",
           },
         },
@@ -84,7 +84,7 @@ export default function FacilitiesLabsSection() {
           ease: "back.out(1.5)",
           scrollTrigger: {
             trigger: grid,
-            start: "top 80%",
+            start: "top 75%",
             toggleActions: "play none none reverse",
           },
         },

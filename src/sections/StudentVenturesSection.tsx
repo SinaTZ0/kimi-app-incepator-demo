@@ -42,7 +42,7 @@ export default function StudentVenturesSection() {
           ease: "power3.inOut",
           scrollTrigger: {
             trigger: section,
-            start: "top 70%",
+            start: "top 60%",
             toggleActions: "play none none reverse",
           },
         },
@@ -62,7 +62,7 @@ export default function StudentVenturesSection() {
           ease: "back.out(1.2)",
           scrollTrigger: {
             trigger: benefitsContainer,
-            start: "top 80%",
+            start: "top 70%",
             toggleActions: "play none none reverse",
           },
         },
