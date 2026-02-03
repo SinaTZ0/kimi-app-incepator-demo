@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import MagneticButton from "../components/MagneticButton";
-import LightRays from "@/bg-ui/light-rays";
-import { ConstellationBackground } from "@/bg-ui/constellation";
+import LightRays from "@/components/bg-ui/light-rays";
+import { ConstellationBackground } from "@/components/bg-ui/constellation";
 import ShinyText from "@/components/text-ui/shiny-text";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -103,7 +103,7 @@ export default function HeroSection() {
                 yoyo={false}
                 pauseOnHover={false}
                 disabled={false}
-                className="pe-3"
+                className="pe-2"
               />
               دانشگاه صنعتی همدان
             </span>
