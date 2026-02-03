@@ -36,7 +36,7 @@ export function ConstellationBackground({
   connectionDistance = 150,
   nodeColor = "rgba(136, 196, 255, 1)",
   lineColor = "rgba(136, 196, 255, 0)",
-  nodeSize = 2.5,
+  nodeSize = 2,
   mouseRadius = 100,
   glow = true,
 }: ConstellationBackgroundProps) {
@@ -193,7 +193,7 @@ export function ConstellationBackground({
   }, [count, connectionDistance, nodeColor, lineColor, nodeSize, mouseRadius, glow]);
 
   return (
-    <div ref={containerRef} className={`absolute inset-0 overflow-hidden bg-neutral-950 ${className}`}>
+    <div ref={containerRef} className={`fixed inset-0 overflow-hidden bg-neutral-950 ${className}`}>
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
       {/* Subtle radial gradient overlay */}

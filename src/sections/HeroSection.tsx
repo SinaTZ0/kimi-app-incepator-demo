@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import MagneticButton from "../components/MagneticButton";
-import LightRays from "@/bg-ui/light-rays";
-import { ConstellationBackground } from "@/bg-ui/constellation";
+import LightRays from "@/components/bg-ui/light-rays";
+import { ConstellationBackground } from "@/components/bg-ui/constellation";
 import ShinyText from "@/components/text-ui/shiny-text";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -93,7 +93,7 @@ export default function HeroSection() {
           <h1 className="text-display-1 text-text-primary mb-6">
             <span className="block text-4xl md:text-6xl leading-tight font-black">
               <ShinyText
-                text="مرکز نوآوری"
+                text="مرکز نوآوری دانشگاه صنعتی همدان"
                 speed={2}
                 delay={0}
                 color="#b5b5b5"
@@ -103,9 +103,7 @@ export default function HeroSection() {
                 yoyo={false}
                 pauseOnHover={false}
                 disabled={false}
-                className="pe-3"
               />
-              دانشگاه صنعتی همدان
             </span>
             <span className="block mt-3 text-xl md:text-2xl text-[#E5E7EB]">
               جایی که ایده‌ها <span className="text-gradient font-black">شکل می‌گیرند</span>
