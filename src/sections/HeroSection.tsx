@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import MagneticButton from "../components/MagneticButton";
 import { useTheme } from "../hooks/useTheme";
+
 import LightRays from "@/components/bg-ui/light-rays";
 import { ConstellationBackground } from "@/components/bg-ui/constellation";
 import ShinyText from "@/components/text-ui/shiny-text";
