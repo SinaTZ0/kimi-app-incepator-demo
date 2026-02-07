@@ -114,7 +114,7 @@ export default function StudentVenturesSection() {
             {/* Benefits Grid */}
             <div ref={benefitsRef} className="grid grid-cols-2 gap-4 mb-8">
               {benefits.map((benefit, i) => (
-                <div key={i} className="benefit-card glass-card p-4 hover:bg-white/10 transition-colors opacity-0">
+                <div key={i} className="benefit-card glass-card p-4 hover:bg-surface/10 transition-colors opacity-0">
                   <benefit.icon className="w-6 h-6 text-indigo mb-3" />
                   <h4 className="font-display font-medium text-text-primary mb-1">{benefit.label}</h4>
                   <p className="text-sm text-text-secondary">{benefit.desc}</p>

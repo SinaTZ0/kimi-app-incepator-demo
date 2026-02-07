@@ -150,7 +150,7 @@ export default function FacilitiesLabsSection() {
               {facilities.map((facility, i) => (
                 <div
                   key={i}
-                  className="facility-card glass-card p-4 hover:bg-white/10 transition-colors group cursor-pointer opacity-0"
+                  className="facility-card glass-card p-4 hover:bg-surface/10 transition-colors group cursor-pointer opacity-0"
                 >
                   <facility.icon className="w-6 h-6 text-indigo mb-3 group-hover:scale-110 transition-transform" />
                   <h4 className="font-display font-medium text-text-primary mb-1">{facility.name}</h4>

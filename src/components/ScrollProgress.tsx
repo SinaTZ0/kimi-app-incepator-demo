@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,11 +16,11 @@ export default function ScrollProgress() {
     // Update progress bar width based on scroll
     gsap.to(progress, {
       scaleX: 1,
-      ease: 'none',
+      ease: "none",
       scrollTrigger: {
         trigger: document.body,
-        start: 'top top',
-        end: 'bottom bottom',
+        start: "top top",
+        end: "bottom bottom",
         scrub: 0.3,
       },
     });
@@ -28,8 +28,8 @@ export default function ScrollProgress() {
     // Show/hide indicator based on scroll
     ScrollTrigger.create({
       trigger: document.body,
-      start: 'top -100',
-      end: 'bottom bottom',
+      start: "top -100",
+      end: "bottom bottom",
       onUpdate: (self) => {
         gsap.to(indicator, {
           opacity: self.progress > 0.01 ? 1 : 0,
@@ -39,25 +39,22 @@ export default function ScrollProgress() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(st => {
+      ScrollTrigger.getAll().forEach((st) => {
         if (st.vars.trigger === document.body) st.kill();
       });
     };
   }, []);
 
   return (
-    <div
-      ref={indicatorRef}
-      className="fixed top-0 left-0 right-0 z-[210] opacity-0"
-    >
-      <div className="h-1 bg-white/5">
+    <div ref={indicatorRef} className="fixed top-0 left-0 right-0 z-[210] opacity-0">
+      <div className="h-1 bg-surface/5">
         <div
           ref={progressRef}
           className="h-full origin-left"
           style={{
-            background: 'linear-gradient(90deg, #4F6DF5 0%, #8B5CF6 100%)',
-            boxShadow: '0 0 20px rgba(79, 109, 245, 0.5)',
-            transform: 'scaleX(0)',
+            background: `linear-gradient(90deg, hsl(var(--color-indigo)) 0%, #8B5CF6 100%)`,
+            boxShadow: `0 0 20px var(--primary-btn-shadow)`,
+            transform: "scaleX(0)",
           }}
         />
       </div>

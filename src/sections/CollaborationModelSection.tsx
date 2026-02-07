@@ -83,7 +83,7 @@ export default function CollaborationModelSection() {
           {steps.map((step, i) => (
             <div key={i} className="step-item relative pl-16 md:pl-24 pb-12 last:pb-0 opacity-0">
               {/* Timeline line */}
-              {i < steps.length - 1 && <div className="absolute left-6 md:left-8 top-14 w-px h-full bg-white/10" />}
+              {i < steps.length - 1 && <div className="absolute left-6 md:left-8 top-14 w-px h-full bg-surface/10" />}
 
               {/* Number circle */}
               <div className="absolute left-0 top-0 w-12 md:w-16 h-12 md:h-16 rounded-full glass-card flex items-center justify-center">
@@ -91,7 +91,7 @@ export default function CollaborationModelSection() {
               </div>
 
               {/* Content */}
-              <div className="glass-card p-6 md:p-8 hover:bg-white/10 transition-colors">
+              <div className="glass-card p-6 md:p-8 hover:bg-surface/10 transition-colors">
                 <div className="flex items-center gap-3 mb-4">
                   <step.icon className="w-6 h-6 text-indigo" />
                   <h3 className="text-xl font-display font-semibold text-text-primary">{step.label}</h3>

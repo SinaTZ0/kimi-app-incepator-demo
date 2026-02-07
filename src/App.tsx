@@ -25,6 +25,7 @@ import ContactApplySection from "./sections/ContactApplySection";
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import { useKeyboardNavigation } from "./hooks/useKeyboardNavigation";
 import { useAppScale } from "./hooks/useAppScale";
+import { ThemeProvider } from "./hooks/useTheme";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +44,7 @@ function App() {
   };
 
   return (
-    <>
+    <ThemeProvider>
       {/* Loading Screen */}
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
 
@@ -84,7 +85,7 @@ function App() {
           <ContactApplySection />
         </main>
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 

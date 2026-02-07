@@ -193,7 +193,7 @@ export function ConstellationBackground({
   }, [count, connectionDistance, nodeColor, lineColor, nodeSize, mouseRadius, glow]);
 
   return (
-    <div ref={containerRef} className={`fixed inset-0 overflow-hidden bg-neutral-950 ${className}`}>
+    <div ref={containerRef} className={`fixed inset-0 overflow-hidden bg-background ${className}`}>
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
       {/* Subtle radial gradient overlay */}

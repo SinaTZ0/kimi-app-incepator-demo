@@ -130,7 +130,7 @@ export default function IndustryBridgeSection() {
             {engagementTypes.map((type, i) => (
               <div
                 key={i}
-                className="engagement-card glass-card p-6 hover:bg-white/10 transition-colors text-left opacity-0"
+                className="engagement-card glass-card p-6 hover:bg-surface/10 transition-colors text-left opacity-0"
               >
                 <div className={`w-12 h-12 rounded-xl ${type.color} flex items-center justify-center mb-4`}>
                   <type.icon className="w-6 h-6 text-indigo" />

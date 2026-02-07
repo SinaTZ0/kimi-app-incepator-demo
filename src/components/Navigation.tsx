@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "پژوهش", href: "#research" },
@@ -116,6 +117,11 @@ export default function Navigation() {
             />
           </div>
 
+          {/* Theme Toggle (desktop) */}
+          <div className="hidden md:flex items-center mr-auto">
+            <ThemeToggle />
+          </div>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -130,13 +136,14 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Static Logo (visible when not scrolled) */}
+      {/* Static Logo + Theme toggle (visible when not scrolled) */}
       <div
-        className={`fixed top-6 right-6 z-[200] transition-opacity duration-500 ${
+        className={`fixed top-6 right-6 z-[200] transition-opacity duration-500 flex items-center gap-4 ${
           isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
         <span className="text-lg font-display font-semibold text-text-primary">مرکز نوآوری</span>
+        <ThemeToggle />
       </div>
 
       {/* Mobile Menu */}
@@ -162,10 +169,21 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
-          <button
-            className="primary-button mt-8 px-8 py-4 text-white font-medium"
+          {/* Mobile Theme Toggle */}
+          <div
             style={{
-              transitionDelay: isMobileMenuOpen ? "300ms" : "0ms",
+              transitionDelay: isMobileMenuOpen ? "280ms" : "0ms",
+              transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
+              opacity: isMobileMenuOpen ? 1 : 0,
+            }}
+            className="transition-all duration-300"
+          >
+            <ThemeToggle />
+          </div>
+          <button
+            className="primary-button mt-4 px-8 py-4 text-white font-medium"
+            style={{
+              transitionDelay: isMobileMenuOpen ? "340ms" : "0ms",
               transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)",
               opacity: isMobileMenuOpen ? 1 : 0,
             }}

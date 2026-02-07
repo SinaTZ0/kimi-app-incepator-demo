@@ -152,7 +152,7 @@ BackgroundBeams.displayName = "BackgroundBeams";
 
 export default function BackgroundBeamsDemo() {
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-neutral-950">
+    <div className="relative h-screen w-screen overflow-hidden bg-background">
       <BackgroundBeams />
     </div>
   );

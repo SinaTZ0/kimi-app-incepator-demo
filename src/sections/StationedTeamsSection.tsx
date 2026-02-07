@@ -201,7 +201,7 @@ export default function StationedTeamsSection() {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-display font-semibold text-text-primary mb-1">{team.name}</h3>
-                    <span className="inline-block px-3 py-1 rounded-full text-xs bg-white/5 text-indigo">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs bg-surface/5 text-indigo">
                       {team.industry}
                     </span>
                   </div>
@@ -255,7 +255,7 @@ export default function StationedTeamsSection() {
               درخواست اقامت
               <ArrowRight className="w-5 h-5 rotate-180" />
             </MagneticButton>
-            <MagneticButton className="glass-button px-8 py-4 text-text-primary font-medium inline-flex items-center gap-2 hover:bg-white/10 transition-colors">
+            <MagneticButton className="glass-button px-8 py-4 text-text-primary font-medium inline-flex items-center gap-2 hover:bg-surface/10 transition-colors">
               رزرو تور بازدید
               <ExternalLink className="w-5 h-5" />
             </MagneticButton>

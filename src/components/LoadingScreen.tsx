@@ -65,7 +65,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
       ref={containerRef}
       className="fixed inset-0 z-[10000] flex flex-col items-center justify-center"
       style={{
-        background: "linear-gradient(135deg, #0B0D10 0%, #141821 100%)",
+        background: `linear-gradient(135deg, var(--loading-bg-from) 0%, var(--loading-bg-to) 100%)`,
       }}
     >
       {/* Animated background mesh */}
@@ -73,7 +73,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
         <div
           className="absolute w-[600px] h-[600px] rounded-full opacity-20"
           style={{
-            background: "radial-gradient(circle, rgba(79, 109, 245, 0.4) 0%, transparent 70%)",
+            background: `radial-gradient(circle, var(--loading-glow-1) 0%, transparent 70%)`,
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
@@ -83,7 +83,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
         <div
           className="absolute w-[400px] h-[400px] rounded-full opacity-15"
           style={{
-            background: "radial-gradient(circle, rgba(100, 80, 220, 0.4) 0%, transparent 70%)",
+            background: `radial-gradient(circle, var(--loading-glow-2) 0%, transparent 70%)`,
             top: "40%",
             left: "45%",
             transform: "translate(-50%, -50%)",
@@ -98,9 +98,9 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           <div
             className="w-24 h-24 mx-auto rounded-2xl flex items-center justify-center"
             style={{
-              background: "rgba(79, 109, 245, 0.15)",
-              border: "1px solid rgba(79, 109, 245, 0.3)",
-              boxShadow: "0 0 60px rgba(79, 109, 245, 0.3)",
+              background: "var(--loading-logo-bg)",
+              border: "1px solid var(--loading-logo-border)",
+              boxShadow: "0 0 60px var(--loading-logo-shadow)",
             }}
           >
             <span className="text-4xl font-display font-bold text-white">I</span>
@@ -112,13 +112,13 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
       {/* Progress bar */}
       <div className="relative z-10 w-64">
-        <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+        <div className="h-1 rounded-full overflow-hidden" style={{ background: "var(--progress-bg)" }}>
           <div
             ref={progressRef}
             className="h-full bg-gradient-to-r from-indigo to-purple-500 rounded-full transition-all duration-300 ease-out"
             style={{
               width: `${Math.min(progress, 100)}%`,
-              boxShadow: "0 0 20px rgba(79, 109, 245, 0.5)",
+              boxShadow: "0 0 20px var(--loading-bar-shadow)",
             }}
           />
         </div>

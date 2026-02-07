@@ -39,17 +39,18 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         indigo: {
-          DEFAULT: "#4F6DF5",
-          glow: "rgba(79, 109, 245, 0.35)",
+          DEFAULT: "hsl(var(--color-indigo))",
+          glow: "var(--indigo-glow)",
         },
         dark: {
-          base: "#0B0D10",
-          lifted: "#141821",
+          base: "hsl(var(--color-dark-base))",
+          lifted: "hsl(var(--color-dark-lifted))",
         },
         text: {
-          primary: "#F4F6FF",
-          secondary: "#A7AEBF",
+          primary: "hsl(var(--color-text-primary))",
+          secondary: "hsl(var(--color-text-secondary))",
         },
+        surface: "rgb(var(--surface-rgb) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["Vazirmatn", "system-ui", "sans-serif"],

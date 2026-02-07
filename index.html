@@ -1,10 +1,23 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مرکز نوآوری دانشگاه</title>
     <!-- Using local font: /font/Vazirmatn-VariableFont_wght.ttf -->
+    <script>
+      // Prevent flash: apply saved theme before first paint
+      (function () {
+        var t = localStorage.getItem("theme-preference");
+        if (t === "light") {
+          document.documentElement.classList.remove("dark");
+        } else if (t === "dark" || !t) {
+          document.documentElement.classList.add("dark");
+        } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

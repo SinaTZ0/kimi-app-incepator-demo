@@ -146,19 +146,19 @@ export default function ContactApplySection() {
               <div className="flex items-center gap-3">
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-xl glass-button flex items-center justify-center hover:bg-white/15"
+                  className="w-10 h-10 rounded-xl glass-button flex items-center justify-center hover:bg-surface/15"
                 >
                   <Twitter className="w-5 h-5 text-text-primary" />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-xl glass-button flex items-center justify-center hover:bg-white/15"
+                  className="w-10 h-10 rounded-xl glass-button flex items-center justify-center hover:bg-surface/15"
                 >
                   <Linkedin className="w-5 h-5 text-text-primary" />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-xl glass-button flex items-center justify-center hover:bg-white/15"
+                  className="w-10 h-10 rounded-xl glass-button flex items-center justify-center hover:bg-surface/15"
                 >
                   <Github className="w-5 h-5 text-text-primary" />
                 </a>
@@ -178,7 +178,7 @@ export default function ContactApplySection() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-surface/5 border border-surface/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors"
                     placeholder="نام شما"
                     required
                   />
@@ -189,7 +189,7 @@ export default function ContactApplySection() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-surface/5 border border-surface/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors"
                     placeholder="email@example.com"
                     required
                   />
@@ -202,7 +202,7 @@ export default function ContactApplySection() {
                   type="text"
                   value={formData.organization}
                   onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-surface/5 border border-surface/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors"
                   placeholder="دانشگاه یا شرکت"
                 />
               </div>
@@ -213,7 +213,7 @@ export default function ContactApplySection() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-surface/5 border border-surface/10 text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-indigo/50 transition-colors resize-none"
                   placeholder="درباره پروژه‌تان بگویید..."
                   required
                 />
@@ -231,7 +231,7 @@ export default function ContactApplySection() {
         </div>
 
         {/* Footer */}
-        <footer className="mt-20 pt-10 border-t border-white/10">
+        <footer className="mt-20 pt-10 border-t border-surface/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
               <span className="text-xl font-display font-semibold text-text-primary">مرکز نوآوری</span>
