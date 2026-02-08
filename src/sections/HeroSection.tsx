@@ -60,26 +60,29 @@ export default function HeroSection() {
   return (
     <div className="relative">
       <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <ConstellationBackground className="opacity-20" />
-
-        <div style={{ width: "100%", height: "100%", position: "absolute" }}>
-          {theme === "dark" ? (
-            <LightRays
-              raysOrigin="top-center"
-              raysColor="#ffffff"
-              raysSpeed={0.5}
-              lightSpread={0.5}
-              rayLength={3}
-              followMouse={true}
-              mouseInfluence={0.02}
-              noiseAmount={0}
-              distortion={0}
-              className="custom-rays"
-              pulsating={false}
-              fadeDistance={3}
-              saturation={1}
-            />
-          ) : (
+        {theme === "dark" ? (
+          <>
+            <ConstellationBackground className="opacity-20" />
+            <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+              <LightRays
+                raysOrigin="top-center"
+                raysColor="#ffffff"
+                raysSpeed={0.5}
+                lightSpread={0.5}
+                rayLength={3}
+                followMouse={true}
+                mouseInfluence={0.02}
+                noiseAmount={0}
+                distortion={0}
+                className="custom-rays"
+                pulsating={false}
+                fadeDistance={3}
+                saturation={1}
+              />
+            </div>
+          </>
+        ) : (
+          <div style={{ width: "100%", height: "100%", position: "absolute" }}>
             <LightRays
               raysOrigin="top-center"
               raysColor="#000000"
@@ -95,8 +98,8 @@ export default function HeroSection() {
               fadeDistance={3}
               saturation={1}
             />
-          )}
-        </div>
+          </div>
+        )}
         <div ref={contentRef} className="relative z-10 w-full px-6 lg:px-12">
           {/* Central Hero Content */}
           <div className="m-auto text-center relative size-full">
